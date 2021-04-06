@@ -52,9 +52,9 @@ namespace UrlChecker.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AppName = table.Column<string>(nullable: true),
-                    AppUrl = table.Column<string>(nullable: true),
-                    Interval = table.Column<string>(nullable: true)
+                    AppName = table.Column<string>(nullable: false),
+                    AppUrl = table.Column<string>(nullable: false),
+                    Interval = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -10,7 +10,7 @@ using UrlChecker.Web.Data;
 namespace UrlChecker.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210406083600_InitialCreate")]
+    [Migration("20210406114333_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -229,12 +229,15 @@ namespace UrlChecker.Web.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AppName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AppUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Interval")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
