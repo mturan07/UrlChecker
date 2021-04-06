@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlChecker.Web", "MvcWebApplication\UrlChecker.Web.csproj", "{42F35B31-CA8E-4B8D-8CFD-3DC586377674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlChecker.Test", "UrlChecker.Test\UrlChecker.Test.csproj", "{79F20E12-8B32-44B0-9161-7DC30702A93C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{42F35B31-CA8E-4B8D-8CFD-3DC586377674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42F35B31-CA8E-4B8D-8CFD-3DC586377674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42F35B31-CA8E-4B8D-8CFD-3DC586377674}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79F20E12-8B32-44B0-9161-7DC30702A93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79F20E12-8B32-44B0-9161-7DC30702A93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79F20E12-8B32-44B0-9161-7DC30702A93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79F20E12-8B32-44B0-9161-7DC30702A93C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
