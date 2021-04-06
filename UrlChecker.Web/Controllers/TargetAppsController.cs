@@ -98,7 +98,11 @@ namespace UrlChecker.Web.Controllers
         // GET: TargetApps/Create
         public IActionResult Create()
         {
-            return View();
+            TargetApp app = new TargetApp()
+            {
+                Interval = "*****"
+            };
+            return View(app);
         }
 
         // POST: TargetApps/Create
