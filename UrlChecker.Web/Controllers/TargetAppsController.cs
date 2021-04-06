@@ -14,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using UrlChecker.Web.Data;
 using UrlChecker.Web.Models;
+using UrlChecker.Web.Models.Abstract;
+using UrlChecker.Web.Models.Concrete;
 
 namespace UrlChecker.Web.Controllers
 {
@@ -21,6 +23,7 @@ namespace UrlChecker.Web.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<Worker> _logger;
+        private ISenderService _senderService;
 
         //private IBackgroundQueue _queue;
         //private readonly Worker _worker;
@@ -29,6 +32,7 @@ namespace UrlChecker.Web.Controllers
         {
             _context = context;
             _logger = logger;
+            _senderService = new EmailService();
         }
 
         private async Task ListeyiYenile()
@@ -58,7 +62,9 @@ namespace UrlChecker.Web.Controllers
         // GET: TargetApps
         [Authorize]
         public async Task<IActionResult> Index()
-        {
+        {            
+            _senderService.Send("info@ethereal.email", "alverta72@ethereal.email", "Mail Test", "Test mail content");
+
             List<TargetApp> targetApps = await _context.TargetApps.ToListAsync();
 
             foreach (var app in targetApps)
