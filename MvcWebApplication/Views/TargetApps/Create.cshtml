@@ -1,0 +1,72 @@
+﻿@model UrlChecker.Web.Models.TargetApp
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Add New TargetApp</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AppName" class="control-label"></label>
+                <input asp-for="AppName" class="form-control" />
+                <span asp-validation-for="AppName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppUrl" class="control-label"></label>
+                <input asp-for="AppUrl" class="form-control" />
+                <span asp-validation-for="AppUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Interval" class="control-label">Run once</label>
+                <div asp-for="Interval" class="form-group">
+                    <select class="form-control" id="selectCron">
+                        <option value="m">a minute</option>
+                        <option value="m5">a 5 minute</option>
+                        <option value="h">an hour</option>
+                        <option value="d">a day</option>
+                        <option value="w">a week</option>
+                        <option value="c">Custom</option>
+                    </select>
+                </div>
+                <input asp-for="Interval" class="form-control" id="textCron" />
+                <span asp-validation-for="Interval" class="text-danger"></span>
+
+                <a href="https://crontab.guru/examples.html" target="_blank">Cron Examples</a>                
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#selectCron').change(function () {
+                var cron = this.value;
+                var text = "";
+
+                if (cron == "m") { text = "* * * * *" } else
+                    if (cron == "m5") { text = "*/5 * * * *" } else
+                        if (cron == "h") { text = "0 * * * *" } else
+                            if (cron == "d") { text = "0 0 * * *" } else
+                                if (cron == "w") { text = "0 0 * * 0" } else
+                                    if (cron == "c") { text = "" }
+
+                $("#textCron").val(text);
+            });
+        });
+    </script>
+}
