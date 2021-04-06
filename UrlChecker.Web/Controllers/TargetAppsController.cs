@@ -62,9 +62,7 @@ namespace UrlChecker.Web.Controllers
         // GET: TargetApps
         [Authorize]
         public async Task<IActionResult> Index()
-        {            
-            _senderService.Send("info@ethereal.email", "alverta72@ethereal.email", "Mail Test", "Test mail content");
-
+        {                       
             List<TargetApp> targetApps = await _context.TargetApps.ToListAsync();
 
             foreach (var app in targetApps)
@@ -150,7 +148,8 @@ namespace UrlChecker.Web.Controllers
             {
                 _logger.LogError("The Website is Down {0}.", ex.Message);
 
-                MailGonderAsync();
+                // TODO: get parameters from appsettings
+                _senderService.Send("info@ethereal.email", "alverta72@ethereal.email", "Mail Test", "Test mail content");
             }
             finally
             {
@@ -281,11 +280,6 @@ namespace UrlChecker.Web.Controllers
                 });
             }
             catch { }
-        }
-
-        public void MailGonderAsync()
-        {
-            //
         }
     }
 }
