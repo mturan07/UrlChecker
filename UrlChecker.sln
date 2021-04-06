@@ -7,6 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlChecker.Web", "UrlChecke
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{D52CCA05-38BC-446A-B952-EAAF0376BB52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EkranGoruntuleri", "EkranGoruntuleri", "{6E063F71-4CB8-4620-98F4-6230DC574615}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Documents\Inv\01 App-Register.png = ..\..\Documents\Inv\01 App-Register.png
+		..\..\Documents\Inv\02 App-LoggedIn.png = ..\..\Documents\Inv\02 App-LoggedIn.png
+		..\..\Documents\Inv\03 App-New.png = ..\..\Documents\Inv\03 App-New.png
+		..\..\Documents\Inv\04 App-Edit.png = ..\..\Documents\Inv\04 App-Edit.png
+		..\..\Documents\Inv\05 App-Delete.png = ..\..\Documents\Inv\05 App-Delete.png
+		..\..\Documents\Inv\06 App-List.png = ..\..\Documents\Inv\06 App-List.png
+		..\..\Documents\Inv\07 App-Hangfire.png = ..\..\Documents\Inv\07 App-Hangfire.png
+		..\..\Documents\Inv\08 App-MailTest.png = ..\..\Documents\Inv\08 App-MailTest.png
+		..\..\Documents\Inv\09 App-ServiceLog.png = ..\..\Documents\Inv\09 App-ServiceLog.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +33,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E063F71-4CB8-4620-98F4-6230DC574615} = {D52CCA05-38BC-446A-B952-EAAF0376BB52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71433E9F-EAD3-4EB3-A90A-17F92B69E422}
